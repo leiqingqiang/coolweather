@@ -42,6 +42,7 @@ public class ContentHandler extends DefaultHandler {
 			County county = new County();
 			county.setCountyCode(attributes.getValue(0));
 			county.setCountyName(attributes.getValue(1));
+			county.setWeatherCode(attributes.getValue(2));
 			county.setCityId(autoIncrementCity);
 			coolWeatherDB.saveCounty(county);
 		}

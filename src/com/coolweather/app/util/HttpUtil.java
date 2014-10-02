@@ -22,11 +22,13 @@ public class HttpUtil {
 				try {
 					URL url = new URL(address);
 					conn = (HttpURLConnection) url.openConnection();
-					conn.setRequestMethod("GET");
-					conn.setConnectTimeout(8 * 1000);
-					conn.setReadTimeout(8 * 1000);
+					conn.setRequestMethod("POST");
+					conn.setConnectTimeout(20 * 1000);
+					conn.setReadTimeout(20 * 1000);
 					conn.setDoInput(true);
 					conn.setDoOutput(true);
+					conn.setUseCaches(false);
+//					conn.setRequestProperty(field, newValue)
 					InputStream in = conn.getInputStream();
 					BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 					StringBuilder response = new StringBuilder();
